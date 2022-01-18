@@ -1,8 +1,8 @@
 #!/bin/sh
 
 KVER=$1
-if [ $KVER = "" ]; then
-  KVER=5.11.0-46-generic;
+if [ "$KVER" = "" ]; then
+  KVER="$(uname -r)"
 fi
 
 echo "The configured kernel version is set to ${KVER}."
