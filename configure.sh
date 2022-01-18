@@ -1,4 +1,9 @@
-export KVER=5.4.0-92-generic;
+#!/bin/sh
+
+KVER=$1
+if [ $KVER = "" ]; then
+  KVER=5.11.0-46-generic;
+fi
 
 echo "The configured kernel version is set to ${KVER}."
 echo
