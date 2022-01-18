@@ -7,4 +7,8 @@ fi
 
 echo "The configured kernel version is set to ${KVER}."
 echo
-echo "Do not forget to run make install."
+echo "If this is not acceptable, please re-run"
+echo "${0} with the kernel version as the first"
+echo "argument."
+echo
+echo "Finally, execute make install."
