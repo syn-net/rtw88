@@ -5,6 +5,8 @@ if [ "$KVER" = "" ]; then
   KVER="$(uname -r)"
 fi
 
+export KVER
+
 echo "The configured kernel version is set to ${KVER}."
 echo
 echo "If this is not acceptable, please re-run"
