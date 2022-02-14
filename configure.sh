@@ -13,4 +13,7 @@ echo "If this is not acceptable, please re-run"
 echo "${0} with the kernel version as the first"
 echo "argument."
 echo
-echo "Finally, execute make install."
+
+echo "sudo -E make install"
+
+exit 0
