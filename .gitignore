@@ -100,3 +100,5 @@ all.config
 # Driver backups
 backup_drivers.tar
 
+# lock file
+.configured
