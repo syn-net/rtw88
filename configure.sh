@@ -1,19 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
 KVER=$1
 if [ "$KVER" = "" ]; then
   KVER="$(uname -r)"
 fi
 
-export KVER
+if [[ -f ".configured" ]]; then
+  rm .configured
+  echo "Housekeeping..."
+  sudo make clean
+fi
 
-echo "The configured kernel version is set to ${KVER}."
-echo
-echo "If this is not acceptable, please re-run"
-echo "${0} with the kernel version as the first"
-echo "argument."
-echo
+echo "The kernel configuration version has been set to ${KVER}."
+if [[ -f /etc/os-release ]]; then
+  eval "$(cat /etc/os-release)"
+  echo "${NAME} ${VERSION}"
+  echo
+fi
 
-echo "sudo -E make install"
+sudo make && touch .configured
 
 exit 0
